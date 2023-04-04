@@ -1,11 +1,10 @@
 
-.nav-bar, .keg, .footer, .header{
+.nav-bar, .keg, .footer, .header, .home-page{
   display: flex;
   justify-content: center;
- 
 }
 
-h1{
+h1, h2{
   display: flex;
   justify-content: center;
 }

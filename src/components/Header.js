@@ -9,28 +9,28 @@ export const Header = () => {
             <NavItem>
                 <NavLink
                 active
-                href="#"
+                href="/"
                 >
                 Home
                 </NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="#">
+                <NavLink href="/beerindex">
                 Index
                 </NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="#">
+                <NavLink href="/beernew">
                 New
                 </NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="#">
+                <NavLink href="/beershow">
                 Show
                 </NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="#">
+                <NavLink href="/beeredit">
                 Edit
                 </NavLink>
             </NavItem>
