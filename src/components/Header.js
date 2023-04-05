@@ -5,6 +5,7 @@ export const Header = () => {
 
   return (
     <>
+    <h1>Header</h1>
         <Nav className='nav-bar'>
             <NavItem>
                 <NavLink
