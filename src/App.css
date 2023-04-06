@@ -12,7 +12,7 @@
   font-family: 'Bebas Neue';
 }
 
-.keg, .footer, .header, .home-page{
+.keg, .footer, .header, .home-page {
   display: flex;
   justify-content: center;
 }
@@ -29,7 +29,6 @@ h1, h2{
 .footer {
   background-color: #F8F4E8;
   height: 40px;
-  /* text-align: center; */
   position: relative;
   left: 0;
   bottom: 0;
