@@ -1,5 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-.nav-bar, .keg, .footer, .header, .home-page{
+
+* {
+  font-family: 'Bebas Neue';
+}
+
+.nav-bar {
+  background-color: #DCB6A8;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bebas Neue';
+}
+
+.keg, .footer, .header, .home-page{
   display: flex;
   justify-content: center;
 }
@@ -11,6 +24,16 @@ h1, h2{
 
 .tapped-message{
   text-align: center;
+}
+
+.footer {
+  background-color: #F8F4E8;
+  height: 40px;
+  /* text-align: center; */
+  position: relative;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 /* beer cards */

@@ -1,12 +1,16 @@
 import React from 'react'
 import { Nav, NavItem, NavLink } from 'reactstrap'
+import beerTinderLogo from '../assets/beerTinderLogo.png'
+
 
 export const Header = () => {
 
   return (
     <>
-    <h1>Header</h1>
         <Nav className='nav-bar'>
+            <NavItem>
+            <img src={beerTinderLogo} alt="Beer Tinder Logo"/>
+            </NavItem>
             <NavItem>
                 <NavLink
                 active
@@ -17,12 +21,12 @@ export const Header = () => {
             </NavItem>
             <NavItem>
                 <NavLink href="/beerindex">
-                Index
+                Beers On Tap
                 </NavLink>
             </NavItem>
             <NavItem>
                 <NavLink href="/beernew">
-                New
+                New Brew
                 </NavLink>
             </NavItem>
             <NavItem>
@@ -36,7 +40,7 @@ export const Header = () => {
                 </NavLink>
             </NavItem>
         </Nav>
-
+        <h1>Header</h1>
     </>
   )
 }

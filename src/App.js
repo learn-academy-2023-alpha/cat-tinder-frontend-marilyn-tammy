@@ -10,11 +10,12 @@ import BeerShow from './pages/BeerShow';
 import BeerEdit from './pages/BeerEdit';
 import NotFound from './pages/NotFound';
 import mockBeers from './mockBeers';
-import { useParams } from 'react-router-dom';
+
 
 
 
 const App = () => {
+
   const [beers, setBeers] = useState(mockBeers)
   return (
     <>
