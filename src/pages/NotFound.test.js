@@ -9,7 +9,6 @@ describe("<NotFound />", () => {
           <NotFound />
         </BrowserRouter>
       )
-      screen.logTestingPlaygroundURL()
         const image = screen.getByRole('img', {name: /photo of a cartoon keg/i})
         expect(image).toBeInTheDocument()
     })
