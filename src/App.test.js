@@ -3,14 +3,15 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom'
 
 describe("<App />", () => {
-  it("renders a greeting", () => {
+  it("renders a logo", () => {
     render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
     )
-    const greeting = screen.getByText("BEER TINDER")
-    expect(greeting).toBeInTheDocument()
-
+    const logo = screen.getByRole('img', {
+      name: /beer tinder logo/i
+    })
+      expect(logo).toBeInTheDocument()
   })
 })

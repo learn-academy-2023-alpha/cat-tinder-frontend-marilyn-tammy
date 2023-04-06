@@ -40,7 +40,6 @@ export const Header = () => {
                 </NavLink>
             </NavItem>
         </Nav>
-        <h1>Header</h1>
     </>
   )
 }
