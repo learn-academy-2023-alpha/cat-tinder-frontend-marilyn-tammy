@@ -11,7 +11,6 @@ describe("<BeerIndex />", () => {
           <BeerIndex beers={beers} />
         </BrowserRouter>
       )
-    //   screen.logTestingPlaygroundURL()
         beers.forEach(beer => {
             const beerName = screen.getByText(beer.name)
             expect(beerName).toBeInTheDocument()
