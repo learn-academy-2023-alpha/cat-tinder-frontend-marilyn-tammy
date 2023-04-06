@@ -9,12 +9,13 @@ import BeerNew from './pages/BeerNew';
 import BeerShow from './pages/BeerShow';
 import BeerEdit from './pages/BeerEdit';
 import NotFound from './pages/NotFound';
-import beers from './mockBeers';
+import mockBeers from './mockBeers';
+import { useParams } from 'react-router-dom';
 
 
 
 const App = () => {
-  const [mockBeers, setMockBeers] = useState(beers)
+  const [beers, setBeers] = useState(mockBeers)
   return (
     <>
       <Header />
@@ -23,9 +24,9 @@ const App = () => {
       <br />
       <Routes >
         <Route path="/" element={ <Home /> } />
-        <Route path="/beerindex" element={ <BeerIndex /> } />
+        <Route path="/beerindex" element={ <BeerIndex beers = {beers} />} />
+        <Route path="/beershow/:id" element={ <BeerShow beers = {beers} /> } />
         <Route path="/beernew" element={ <BeerNew /> } />
-        <Route path="/beershow" element={ <BeerShow /> } />
         <Route path="/beeredit" element={ <BeerEdit /> } />
         <Route path="*" element={ <NotFound /> } />
       </Routes>

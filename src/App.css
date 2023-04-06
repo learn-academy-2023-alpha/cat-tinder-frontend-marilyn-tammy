@@ -12,3 +12,10 @@ h1, h2{
 .tapped-message{
   text-align: center;
 }
+
+/* beer cards */
+.card-flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
