@@ -47,13 +47,17 @@ const App = () => {
     console.log("id:", id)
   }
 
+  const deleteBeer = (beer, id) => {
+    console.log("beer deleted:", beer)
+  }
+
   return (
     <>
       <Header />
       <Routes >
         <Route path="/" element={ <Home /> } />
         <Route path="/beerindex" element={ <BeerIndex beers={beers} />} />
-        <Route path="/beershow/:id" element={ <BeerShow beers={beers} /> } />
+        <Route path="/beershow/:id" element={ <BeerShow beers={beers} deleteBeer={deleteBeer}/> } />
         <Route path="/beernew" element={ <BeerNew createBeer={createBeer} /> } />
         <Route path="/beeredit/:id" element={ <BeerEdit  beers={beers} updateBeer={updateBeer} /> } />
         <Route path="*" element={ <NotFound /> } />
