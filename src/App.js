@@ -9,7 +9,7 @@ import BeerNew from './pages/BeerNew';
 import BeerShow from './pages/BeerShow';
 import BeerEdit from './pages/BeerEdit';
 import NotFound from './pages/NotFound';
-import mockBeers from './mockBeers';
+
 
 
 
@@ -55,8 +55,16 @@ const App = () => {
     .catch((errors) => console.log("Beer Update Errors:", errors))
   }
 
-  const deleteBeer = (beer, id) => {
-    console.log("beer deleted:", beer)
+  const deleteBeer = (id) => {
+    fetch(`http://localhost:3000/beers/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then((response) => response.json())
+    .then((payload) => readBeer())
+    .catch((errors) => console.log("Beer Delete Errors:", errors))
   }
 
   return (

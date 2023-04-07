@@ -33,7 +33,6 @@ const BeerEdit = ( { beers, updateBeer, index}) => {
     <Form>
         <FormGroup row>
           <Label 
-            key={index}
             for="name"
             sm={2}
           >
