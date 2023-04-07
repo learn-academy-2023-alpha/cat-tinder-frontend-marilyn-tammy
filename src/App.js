@@ -42,6 +42,11 @@ const App = () => {
     .catch((errors) => console.log("Beer Create Errors:", errors))
   }
 
+  const updateBeer = (beer, id) => {
+    console.log("beer:", beer)
+    console.log("id:", id)
+  }
+
   return (
     <>
       <Header />
@@ -50,7 +55,7 @@ const App = () => {
         <Route path="/beerindex" element={ <BeerIndex beers={beers} />} />
         <Route path="/beershow/:id" element={ <BeerShow beers={beers} /> } />
         <Route path="/beernew" element={ <BeerNew createBeer={createBeer} /> } />
-        <Route path="/beeredit" element={ <BeerEdit /> } />
+        <Route path="/beeredit/:id" element={ <BeerEdit  beers={beers} updateBeer={updateBeer} /> } />
         <Route path="*" element={ <NotFound /> } />
       </Routes>
       <br />

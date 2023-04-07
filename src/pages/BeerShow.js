@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { CardBody, CardTitle, CardSubtitle, Card, CardText, Button } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
-const BeerShow = ({ beers }) => {
+const BeerShow = ({ beers, currentBeer }) => {
   const {id} = useParams()
   let selectedBeer = beers.find(beer => beer.id === +id)
   return (
@@ -34,6 +34,11 @@ const BeerShow = ({ beers }) => {
         <Button>
           <NavLink to="/beerindex">
             Back to Index
+          </NavLink>
+        </Button>
+        <Button>
+          <NavLink to={`/beeredit/${selectedBeer.id}`} className="nav-link">
+            Edit Beer
           </NavLink>
         </Button>
       </CardBody>
