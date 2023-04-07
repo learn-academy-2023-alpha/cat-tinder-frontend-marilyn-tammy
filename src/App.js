@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -16,10 +16,30 @@ import mockBeers from './mockBeers';
 
 const App = () => {
 
-  const [beers, setBeers] = useState(mockBeers)
+  const [beers, setBeers] = useState([])
+
+  useEffect(() => {
+    readBeer()
+  }, [])
+
+  const readBeer = () => {
+    fetch("http://localhost:3000/beers")
+    .then((response) => response.json())
+    .then((payload) => setBeers(payload))
+    .catch((error) => console.log(error))
+  }
 
   const createBeer = (beer) => {
-    console.log("create beer:", beer)
+    fetch("http://localhost:3000/beers", {
+      body: JSON.stringify(beer),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then((response) => response.json())
+    .then(() => readBeer())
+    .catch((errors) => console.log("Beer Create Errors:", errors))
   }
 
   return (
