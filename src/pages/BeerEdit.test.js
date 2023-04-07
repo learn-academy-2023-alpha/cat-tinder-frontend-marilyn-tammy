@@ -1,20 +1,26 @@
 import { render, screen } from '@testing-library/react';
-import BeerNew from './BeerNew';
+import BeerEdit from './BeerEdit';
 import { BrowserRouter } from 'react-router-dom'
+
+
+
     
 
-describe("<BeerNew />", () => {
+describe("<BeerEdit />", () => {
     beforeEach(() => {
         render(
             <BrowserRouter>
-                <BeerNew />
+                <BeerEdit />
             </BrowserRouter>
         )
     })
 
-    it("renders the BeerNew page for the user", () => {
-      const inputTitle = screen.getByText("BEER NAME")
-      expect(inputTitle).toBeInTheDocument()    
+    it("renders the BeerEdit page for the user", () => {
+        screen.logTestingPlaygroundURL()
+        const inputTitle = screen.getByRole('heading', {
+            name: /edit brew/i
+          })
+        expect(inputTitle).toBeInTheDocument()    
     })
 
     it("has a form with entries for name, abv, style, brewery, profile, and image", () => {

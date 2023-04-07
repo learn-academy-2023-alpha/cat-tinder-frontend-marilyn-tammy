@@ -12,6 +12,7 @@ const BeerNew = ( {createBeer} ) => {
     profile: "",
     image: ""
   })
+  
   const navigate = useNavigate()
   
   const handleChange = (e) => {
@@ -49,12 +50,12 @@ const BeerNew = ( {createBeer} ) => {
             for="abv"
             sm={2}
           >
-            ABV
+            ABV %
           </Label>
           <Col sm={10}>
           <Input 
             name="abv" 
-            placeholder="ABV of Your Beer"
+            placeholder="ABV % of Your Beer"
             type="text"
             onChange={handleChange}
           />
