@@ -43,8 +43,16 @@ const App = () => {
   }
 
   const updateBeer = (beer, id) => {
-    console.log("beer:", beer)
-    console.log("id:", id)
+    fetch(`http://localhost:3000/beers/${id}`, {
+      body: JSON.stringify(beer),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then((response) => response.json())
+    .then((payload) => readBeer())
+    .catch((errors) => console.log("Beer Update Errors:", errors))
   }
 
   const deleteBeer = (beer, id) => {
