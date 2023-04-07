@@ -30,7 +30,16 @@ const App = () => {
   }
 
   const createBeer = (beer) => {
-    console.log("create beer:", beer)
+    fetch("http://localhost:3000/beers", {
+      body: JSON.stringify(beer),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then((response) => response.json())
+    .then(() => readBeer())
+    .catch((errors) => console.log("Beer Create Errors:", errors))
   }
 
   return (
