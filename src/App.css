@@ -5,14 +5,27 @@
   font-family: 'Bebas Neue';
 }
 
+a:hover {
+  background-color: rgba(251, 251, 251, 0.2);
+}
+
 .nav-bar {
   background-color: #DCB6A8;
   display: flex;
   justify-content: space-between;
   font-family: 'Bebas Neue';
+  font-size: 25px;
+  padding: 10px;
 }
 
-.keg, .footer, .header, .home-page {
+.nav-text {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  color: white;
+}
+
+.keg, .header, .home-page {
   display: flex;
   justify-content: center;
 }
@@ -33,11 +46,46 @@ h1, h2{
   left: 0;
   bottom: 0;
   right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.footer-text {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.footer-image {
+  display: flex;
+  justify-content: center;
 }
 
 /* beer cards */
 .card-flex{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.card {
+  margin: auto;
+  padding: 20px;
+}
+
+.card-show {
+  padding: 20px;
+}
+
+.show-buttons {
+  margin: auto;
+  justify-content: space-around;
+}
+
+/* form */
+Form {
+  width: 50%;
+  margin: auto;
 }

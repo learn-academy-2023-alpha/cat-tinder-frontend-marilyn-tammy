@@ -33,7 +33,8 @@ const BeerIndex = ( { beers } ) => {
                   {beer.profile}
                 </CardText>
                 <Button>
-                  <NavLink to={`/beershow/${beer.id}`}>
+                  <NavLink to={`/beershow/${beer.id}`} style={{color:"white", textDecoration:"none"}}
+                activeStyle={{color:"black", textDecoration:"none"}}>
                     More info
                   </NavLink>
                 </Button>

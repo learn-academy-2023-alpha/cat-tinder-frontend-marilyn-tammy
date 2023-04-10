@@ -8,37 +8,38 @@ export const Header = () => {
   return (
     <>
         <Nav className='nav-bar'>
+            <div className='nav-logo'>
             <NavItem>
-            <img src={beerTinderLogo} alt="Beer Tinder Logo"/>
+            <NavLink
+                active
+                href="/"
+                style={{color:"white", textDecoration:"none"}}
+                >
+                    <img src={beerTinderLogo} alt="Beer Tinder Logo"/>
+                </NavLink>
             </NavItem>
+            </div>
+            <div className='nav-text'>
             <NavItem>
                 <NavLink
                 active
                 href="/"
+                style={{color:"white", textDecoration:"none"}}
                 >
                 Home
                 </NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="/beerindex">
+                <NavLink href="/beerindex" style={{color:"white", textDecoration:"none"}}>
                 Beers On Tap
                 </NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="/beernew">
+                <NavLink href="/beernew" style={{color:"white", textDecoration:"none"}}>
                 New Brew
                 </NavLink>
             </NavItem>
-            <NavItem>
-                <NavLink href="/beershow">
-                Show
-                </NavLink>
-            </NavItem>
-            <NavItem>
-                <NavLink href="/beeredit">
-                Edit
-                </NavLink>
-            </NavItem>
+            </div>
         </Nav>
     </>
   )
