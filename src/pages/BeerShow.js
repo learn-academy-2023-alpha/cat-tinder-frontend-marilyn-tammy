@@ -15,9 +15,10 @@ const BeerShow = ({ beers, deleteBeer }) => {
   return (
     <>
     {selectedBeer && (
+      <div className='card-show'>
       <Card
       style={{
-        width: '100%'
+        width: '50%'
       }}
     >
       <img
@@ -37,23 +38,29 @@ const BeerShow = ({ beers, deleteBeer }) => {
         <CardText>
           Notes: {selectedBeer.profile}
         </CardText>
+        <div className='show-buttons'>
         <Button>
-          <NavLink to="/beerindex">
+          <NavLink to="/beerindex" style={{color:"white", textDecoration:"none"}}
+                activeStyle={{color:"black", textDecoration:"none"}}>
             Back to Index
           </NavLink>
         </Button>
         <Button>
-          <NavLink to={`/beeredit/${selectedBeer.id}`} className="nav-link">
+          <NavLink to={`/beeredit/${selectedBeer.id}`} style={{color:"white", textDecoration:"none"}}
+                activeStyle={{color:"black", textDecoration:"none"}}>
             Edit Beer
           </NavLink>
         </Button>
         <Button onClick={handleDelete}>
-          <NavLink to="/beerindex">
+          <NavLink to="/beerindex" style={{color:"white", textDecoration:"none"}}
+                activeStyle={{color:"black", textDecoration:"none"}}>
             Delete Beer
           </NavLink>
         </Button>
+        </div>
       </CardBody>
     </Card>
+    </div>
     )}
     </>
   )
