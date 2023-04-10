@@ -55,7 +55,7 @@ const App = () => {
     .catch((errors) => console.log("Beer Update Errors:", errors))
   }
 
-  const deleteBeer = (id) => {
+  const deleteBeer = (beer, id) => {
     fetch(`http://localhost:3000/beers/${id}`, {
       headers: {
         "Content-Type": "application/json"
@@ -63,7 +63,7 @@ const App = () => {
       method: "DELETE"
     })
     .then((response) => response.json())
-    .then((payload) => readBeer())
+    .then((payload) => {readBeer()})
     .catch((errors) => console.log("Beer Delete Errors:", errors))
   }
 
