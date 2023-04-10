@@ -1,11 +1,17 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
 import { CardBody, CardTitle, CardSubtitle, Card, CardText, Button } from 'reactstrap'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 
-const BeerShow = ({ beers, currentBeer, deleteBeer }) => {
+
+const BeerShow = ({ beers, deleteBeer }) => {
+
   const {id} = useParams()
   let selectedBeer = beers.find(beer => beer.id === +id)
+
+  const handleDelete = () => {
+    deleteBeer(selectedBeer, selectedBeer.id)
+  }
+
   return (
     <>
     {selectedBeer && (
@@ -41,7 +47,7 @@ const BeerShow = ({ beers, currentBeer, deleteBeer }) => {
             Edit Beer
           </NavLink>
         </Button>
-        <Button onClick={deleteBeer}>
+        <Button onClick={handleDelete}>
           <NavLink to="/beerindex">
             Delete Beer
           </NavLink>
